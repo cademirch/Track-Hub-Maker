@@ -1,0 +1,132 @@
+track VCF
+bigDataUrl filtered.merged.vcf.gz
+shortLabel VCF
+longLabel VCF
+type vcfTabix
+
+track Tajima_D
+compositeTrack on
+shortLabel Tajima's D
+longLabel Tajima's D
+color 200,100,0
+altColor 0,102,204
+maxHeightPixels 128:64:11
+viewLimits -2.5:3
+viewLimitsMax 0:100
+type bigWig
+allButtonPair on
+visibility hide
+
+	track Tajima_100k
+	parent Tajima_D on
+	bigDataUrl 100k.tajima.bw
+	type bigWig
+	shortLabel Tajima's D 100k
+	longLabel Tajima's D 100k bins
+	
+        track Tajima_10k
+        parent Tajima_D on
+        bigDataUrl 10k.tajima.bw
+	type bigWig
+	shortLabel Tajima's D 10k
+	longLabel Tajima's D 10k Bins
+
+
+        track Tajima_1k
+        parent Tajima_D on
+        bigDataUrl 1k.tajima.bw
+	type bigWig
+	shortLabel Tajima's D 1k
+	longLabel Tajima's D 1k Bin
+
+track SNP_Density
+compositeTrack on
+shortLabel SNP Density
+longLabel SNP Denisty
+type bigWig
+allButtonPair on
+maxHeightPixels 128:64:11
+visibility full
+autoScale on
+
+	track SNPden_100k
+	parent SNP_Density on
+	bigDataUrl 100k.snpden.bw
+	type bigWig
+	color 200,100,0
+	shortLabel SNP Density 100k
+	longLabel SNP Density 100k Bins
+
+        track SNPden_10k
+        parent SNP_Density on
+        bigDataUrl 10k.snpden.bw
+        type bigWig
+        color 200,200,0
+        shortLabel SNP Density 10k
+        longLabel SNP Density 10k Bins
+
+        track SNPden_1k
+        parent SNP_Density on
+        bigDataUrl 1k.snpden.bw
+        type bigWig
+        color 200,150,0
+        shortLabel SNP Density 1k
+        longLabel SNP Density 1k Bins
+
+track Low_Coverage
+bigDataUrl low.bb
+shortLabel Low Coverage
+type bigBed
+longLabel Low Coverage sites
+color 0,0,255
+visibility dense
+
+track Clean_Coverage
+bigDataUrl clean.bb
+shortLabel Clean Coverage
+type bigBed
+longLabel Clean Coverage sites
+color 255,0,0
+visibility dense
+
+track High_Coverage
+bigDataUrl high.bb
+shortLabel High Coverage
+type bigBed
+longLabel High Coverage sites
+color 0,255,0
+visibility dense
+
+track Pi
+compositeTrack on
+shortLabel Pi
+longLabel Nucleotide Diversity
+type bigWig
+allButtonPair on
+maxHeightPixels 128:64:11
+autoScale on
+visibility full
+
+	track Pi_100k
+	parent Pi on
+	bigDataUrl 100k.pi.bw
+	type bigWig
+	shortLabel Pi 100k
+	longLabel Pi 100k Bins
+	color 178,102,105
+
+        track Pi_10k
+        parent Pi on
+        bigDataUrl 10k.pi.bw
+        type bigWig
+        shortLabel Pi 10k
+        longLabel Pi 10k Bins 
+	color 0,128,255
+
+        track Pi_1k
+        parent Pi on
+        bigDataUrl 1k.pi.bw
+        type bigWig
+        shortLabel Pi 1k
+        longLabel Pi 1k Bins
+	color 204,0,102
