@@ -1,6 +1,6 @@
 import glob
 
-SAMPLES_FILE = ''
+SAMPLES_FILE = 'samples.tsv'
 
 genomes = {}
 
