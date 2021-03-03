@@ -75,7 +75,7 @@ rule filter_vcf:
     log:
         "logs/vcftools/{directory}/filter_vcf.log"
     shell:
-        "vcftools --gzvcf {input} --remove-filtered-all --recode --stdout 2>>{log} | bgzip > {output}"
+        "vcftools --gzvcf {input} --remove-filtered-all --recode --recode-INFO-all --stdout 2>>{log} | bgzip > {output}"
 
 rule tabix:
     input:
